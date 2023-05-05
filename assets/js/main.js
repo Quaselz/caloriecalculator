@@ -89,7 +89,7 @@ myForm.addEventListener("submit", (event) => {
 
 	//outputs BasalRate
 	outputBasalRateKcalDisplay.innerHTML = basalRate.toFixed(3).replace(".", ",");
-	outputBasalRateKJDisplay.innerHTML = (basalRate * 4.182)
+	outputBasalRateKJDisplay.innerHTML = (basalRate * 4.184)
 		.toFixed(3)
 		.replace(".", ",");
 
@@ -97,7 +97,7 @@ myForm.addEventListener("submit", (event) => {
 	ooutputTotalRateKcalDisplay.innerHTML = totalRate
 		.toFixed(3)
 		.replace(".", ",");
-	outputTotalRateKJDisplay.innerHTML = (totalRate * 4.182)
+	outputTotalRateKJDisplay.innerHTML = (totalRate * 4.184)
 		.toFixed(3)
 		.replace(".", ",");
 });
