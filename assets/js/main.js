@@ -17,12 +17,20 @@ myForm.addEventListener("submit", (event) => {
 	//getting values
 	const age = Number(document.querySelector("#age").value);
 	const gender = document.querySelector('input[name="gender"]:checked').value;
-	const activity = document.querySelector("#activity").value;
+
+	const activity = document
+		.querySelector("#activity")
+		.querySelector(".selected").dataset.value;
+
 	let height = document.querySelector("#height").value;
-	const heightMassUnit = document.querySelector("#heightUnit").value;
+	const heightMassUnit = document
+		.querySelector("#heightUnit")
+		.querySelector(".selected").dataset.value;
 
 	let weight = document.querySelector("#weight").value;
-	const weightMassUnit = document.querySelector("#weightUnit").value;
+	const weightMassUnit = document
+		.querySelector("#weightUnit")
+		.querySelector(".selected").dataset.value;
 
 	let basalRate, totalRate, totalRateCalc;
 
@@ -83,3 +91,25 @@ myForm.addEventListener("submit", (event) => {
 	ooutputTotalRateKcalDisplay.innerHTML = totalRate.toFixed(3);
 	outputTotalRateKJDisplay.innerHTML = (totalRate * 4.2).toFixed(3);
 });
+
+//setting up dropboxs
+for (const dropbox of document.querySelectorAll(".activity-wrapper")) {
+	dropbox.addEventListener("click", function () {
+		this.querySelector(".activity").classList.toggle("open");
+	});
+}
+
+//setting up dropbox selections
+for (const option of document.querySelectorAll(".select-option")) {
+	option.addEventListener("click", function () {
+		if (!this.classList.contains("selected")) {
+			this.parentNode
+				.querySelector(".select-option.selected")
+				.classList.remove("selected");
+			this.classList.add("selected");
+			this.closest(".activity").querySelector(
+				".select_trigger span"
+			).textContent = this.textContent;
+		}
+	});
+}
