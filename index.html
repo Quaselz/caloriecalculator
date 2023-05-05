@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Zeichenkettentrennungsmaschine</title>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+	</head>
+	<body>
+		<main>
+			<section class="box">
+				<div class="wrapper">
+					<h1>Kalorien Rechner</h1>
+					<form action="" id="form">
+						<div>
+							<label for="height"><h3>Körpergröße</h3></label>
+							<input
+								type="number"
+								name="height"
+								id="height"
+								required
+								step="0.01"
+							/>
+							<label for="heightUnit"></label>
+							<select name="heightUnit" id="heightUnit">
+								<option value="m">m</option>
+								<option value="cm">cm</option>
+							</select>
+						</div>
+						<label for="age"><h3>Alter</h3></label>
+						<input
+							type="number"
+							name="age"
+							id="age"
+							required
+							min="0"
+							max="150"
+						/>
+						<div>
+							<label for="weight"><h3>Gewicht</h3></label>
+							<input
+								type="number"
+								name="weight"
+								id="weight"
+								required
+								step="0.01"
+							/>
+							<label for="weightUnit"></label>
+							<select name="weightUnit" id="weightUnit">
+								<option value="kg">kg</option>
+								<option value="g">g</option>
+							</select>
+						</div>
+						<h3>Körperbau</h3>
+						<input type="radio" name="gender" value="male" id="male" checked />
+						<label for="male">Männlich</label>
+						<input type="radio" name="gender" value="female" id="female" />
+						<label for="female">Weiblich</label>
+
+						<label for="activity"
+							><h3>Arbeits- und Freizeitaktivität</h3></label
+						>
+						<select name="activity" id="activity">
+							<option value="sleep">Schlafen</option>
+							<option value="lay">Nur Sitzen oder Liegen</option>
+							<option value="sit">
+								Ausschließlich sitzende Tätigkeiten mit wenig oder keiner
+								Körperlichen Aktivität in der Freizeit, z.B. Büroarbeit
+							</option>
+							<option value="sitPlus">
+								Sitzende Tätigkeit mit zeitweilig gehender oder stehender
+								Tätigkeit, z.B. Studierende, Fließbandarbeiter, Laboranten,
+								Kraftfahrer
+							</option>
+							<option value="stayMost">
+								Überwiegend gehende oder stehende Tätigkeit, z.B. Verkäufer,
+								Kellner, Handwerker, Mechaniker, Hausfrauen
+							</option>
+							<option value="stay">
+								Körperlich anstrengende berufliche Arbeit
+							</option>
+						</select>
+						<button type="submit" value="Daten trennen" id="btn">Submit</button>
+					</form>
+					<div class="grid">
+						<p>Kcal</p>
+						<p>kJ</p>
+						<p>Grundumsatz</p>
+						<p id="outputBasalRateKcal"></p>
+						<p id="outputBasalRateKJ"></p>
+						<p>Gesamtumsatz</p>
+						<p id="outputTotalRateKcal"></p>
+						<p id="outputTotalRateKJ"></p>
+					</div>
+					<p>
+						Das Ergebnis des Rechners sollten Sie als Orientierungswert ansehen,
+						da es verschiedene Fehlermöglichkeiten gibt wie abweichender
+						Grundumsatz, falsche Zeiteinschätzung etc.
+					</p>
+				</div>
+			</section>
+		</main>
+		<script type="text/javascript" src="./assets/js/main.js"></script>
+	</body>
+</html>
