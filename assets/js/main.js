@@ -113,3 +113,11 @@ for (const option of document.querySelectorAll(".select-option")) {
 		}
 	});
 }
+
+//add global open class remover to close dropbox
+window.addEventListener("click", function (e) {
+	const select = document.querySelector(".select");
+	if (!select.contains(e.target)) {
+		select.classList.remove("open");
+	}
+});
