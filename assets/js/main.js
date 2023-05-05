@@ -49,8 +49,12 @@ myForm.addEventListener("submit", (event) => {
 	}
 	//check gender
 	if (gender === "male") {
+		console.log({ weight }, { height }, { age });
+
 		basalRate = 66.47 + 13.7 * weight + 5 * height - 6.8 * age;
 	} else if (gender === "female") {
+		console.log({ weight }, { height }, { age });
+
 		basalRate = 655.1 + 9.6 * weight + 1.8 * height - 4.7 * age;
 	} else {
 		alert("Bitte Geschlecht auswählen.");
@@ -84,12 +88,18 @@ myForm.addEventListener("submit", (event) => {
 	totalRate = basalRate * totalRateCalc;
 
 	//outputs BasalRate
-	outputBasalRateKcalDisplay.innerHTML = basalRate.toFixed(3);
-	outputBasalRateKJDisplay.innerHTML = (basalRate * 4.2).toFixed(3);
+	outputBasalRateKcalDisplay.innerHTML = basalRate.toFixed(3).replace(".", ",");
+	outputBasalRateKJDisplay.innerHTML = (basalRate * 4.182)
+		.toFixed(3)
+		.replace(".", ",");
 
 	//output totalRate
-	ooutputTotalRateKcalDisplay.innerHTML = totalRate.toFixed(3);
-	outputTotalRateKJDisplay.innerHTML = (totalRate * 4.2).toFixed(3);
+	ooutputTotalRateKcalDisplay.innerHTML = totalRate
+		.toFixed(3)
+		.replace(".", ",");
+	outputTotalRateKJDisplay.innerHTML = (totalRate * 4.182)
+		.toFixed(3)
+		.replace(".", ",");
 });
 
 //setting up dropboxs
