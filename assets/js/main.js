@@ -116,8 +116,9 @@ for (const option of document.querySelectorAll(".select-option")) {
 
 //add global open class remover to close dropbox
 window.addEventListener("click", function (e) {
-	const select = document.querySelector(".activity");
-	if (!select.contains(e.target)) {
-		select.classList.remove("open");
+	for (const select of document.querySelectorAll(".activity")) {
+		if (!select.contains(e.target)) {
+			select.classList.remove("open");
+		}
 	}
 });
